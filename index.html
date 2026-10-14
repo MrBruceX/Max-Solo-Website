@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Max Website</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Inter:wght@400;600&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<main id="stage" class="stage">
+  <!-- Left: art card -->
+  <article class="card side left"><div class="art"><img id="artImg" alt=""></div></article>
+
+  <!-- Center: profile card -->
+  <article class="card center">
+    <div class="lines"><i></i><i></i><i></i></div>
+    <div class="avatar-wrap">
+      <img id="avatar" class="avatar" alt="Avatar">
+      <span id="dot" class="dot offline" title="offline"></span>
+      <div id="bubble" class="bubble hidden"></div>
+    </div>
+    <h2 id="name" class="name">...</h2>
+    <p id="handle" class="handle"></p>
+    <nav id="socials" class="socials"></nav>
+    <div class="status-box">
+      <div class="dc-icon"><svg viewBox="0 0 24 24"><path id="dcPath" fill="currentColor" d=""/></svg></div>
+      <div>
+        <b class="label">STATUS</b>
+        <div class="status-text"><span id="statusEmoji"></span><span id="statusText"></span><span class="caret"></span></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Right: now playing card -->
+  <article class="card side right">
+    <div class="np-head"><span id="npLabel">TAP TO PLAY</span>
+      <svg class="bars" viewBox="0 0 16 16"><rect x="1" y="7" width="3" height="8"/><rect x="6" y="2" width="3" height="13"/><rect x="11" y="5" width="3" height="10"/></svg>
+    </div>
+    <div class="cover"><img id="cover" alt=""></div>
+    <h3 id="npTitle">Nothing playing</h3>
+    <p id="npSub">—</p>
+    <div class="time"><span id="tNow">0:00</span><span id="tEnd">LIVE</span></div>
+    <div class="bar seek" id="progBar"><div id="barFill"></div></div>
+    <div class="controls">
+      <button aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+      <button class="play" aria-label="Play/Pause"><svg viewBox="0 0 24 24"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button>
+      <button aria-label="Next"><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+    </div>
+    <div id="wave" class="wave"></div>
+    <div class="vol"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9z"/></svg><div class="bar thin seek" id="volBar"><div id="volFill" style="width:60%"></div></div></div>
+  </article>
+</main>
+
+<div id="ytWrap" aria-hidden="true"><div id="ytPlayer"></div></div>
+<script src="script.js"></script>
+</body>
+</html>
